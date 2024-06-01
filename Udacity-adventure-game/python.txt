@@ -1,0 +1,14 @@
+import time
+import random
+import string
+
+items = []
+
+
+def typewriter_simulator(message):
+    for char in message:
+        print(char, end='')
+        if char in string.punctuation:
+            time.sleep(.5)
+        time.sleep(.03)
+    print('')

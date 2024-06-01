@@ -12,3 +12,8 @@ def typewriter_simulator(message):
             time.sleep(.5)
         time.sleep(.03)
     print('')
+
+
+def print_pause(message, delay=0):
+    time.sleep(delay)
+    typewriter_simulator(message)

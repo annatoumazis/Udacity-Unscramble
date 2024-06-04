@@ -11,3 +11,21 @@ class Player:
 
     def learn(self, my_move, thier_move):
         pass
+
+class AllRockPlayer(Player):
+    def move(self):
+        return "rock"
+
+
+class RandomPlayer(Player):
+    def move(self):
+        return random.choice(self.moves)
+
+class HumanPlayer(Player):
+    def move(self):
+        while True:
+            human_move = input("What move will you make?")
+            if human_move.lower() in self.moves:
+                return human_move.lower()
+            elif human_move.lower() == "exit":
+                exit()

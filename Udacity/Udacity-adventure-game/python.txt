@@ -46,3 +46,16 @@ def cave():
         items.append("sword")
     print_pause("You walk back out to the field.")
     field()
+
+def field():
+    print_pause("Enter 1 to knock on the door of the house.")
+    print_pause("Enter 2 to peer into the cave.")
+    while True:
+        response = input()
+        if response == "1":
+            house()
+            fight()
+        elif response == "2":
+            cave()
+        else:
+            print_pause("Please enter 1 or 2.")

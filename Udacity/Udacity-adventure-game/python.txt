@@ -59,3 +59,15 @@ def field():
             cave()
         else:
             print_pause("Please enter 1 or 2.")
+
+def house():
+    selected_enemy = monsters()
+    messages = [
+        "You approach the door of the house."
+        "Eep! This is", selected_enemy, "'s house!"
+        "The,", selected_enemy, " attacks you!"
+        "You feel a bit under-prepared for this,"
+        "what with only having a tiny dagger."]
+    for message in messages:
+        print_pause(message)
+

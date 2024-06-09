@@ -71,3 +71,35 @@ def house():
     for message in messages:
         print_pause(message)
 
+def fight():
+    selected_enemy = monsters()
+    response = input("Would you like to (1) fight or (2) run away?").lower()
+    if response == "2":
+        print_pause("You run back into the field. Luckily,"
+                    "you don't seem to have been followed.")
+        field()
+    elif response == "1":
+        if "sword" in items:
+            messages = [
+                "As the,", selected_enemy, " moves to attack,"
+                "you unshealth your new sword."
+                "The Sword of Ogoroth shines brightly in"
+                "your hand as you brace yourself for the attack."
+                "But the,", selected_enemy, " takes one look"
+                "at your shiny new toy and runs away!"
+                "You have rid the town of"
+                "", selected_enemy, " the monster. You are victorious!"]
+            for message in messages:
+                print_pause(message)
+            last_question()
+        else:
+            messages = [
+                "You do your best..."
+                "but your dagger is no match for the,", selected_enemy, "."
+                "You have been defeated!"]
+            for message in messages:
+                print_pause(message)
+            last_question()
+    else:
+        print_pause("Please enter only 1 or 2.")
+

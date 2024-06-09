@@ -101,3 +101,18 @@ class Game:
                   f"\n Player 2: ({self.p2.score})"
                   f"\n Player 2 is a WINNER!")
         print("Game over!")
+
+if __name__ == '__main__':
+    opponents = {
+        '1': AllRockPlayer,
+        '2': RandomPlayer,
+        '3': ReflectPlayer,
+        '4': CyclePlayer,
+        '5': HumanPlayer}
+    print("Player list:")
+    for key, value in opponents.items():
+        print(f"{key}. {value.__name__}")
+    p1 = opponents[input(f"Choose player 1: ")]
+    p2 = opponents[input(f"Choose player 2: ")]
+    game = Game(p1(), p2())
+    game.play_game()

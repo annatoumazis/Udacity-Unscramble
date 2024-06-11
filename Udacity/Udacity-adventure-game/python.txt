@@ -113,3 +113,7 @@ def last_question():
     else:
         last_question()
 
+def monsters():
+    enemies = ["dragon", "big boo", "small boo", "troll"]
+    return random.choice(enemies)
+

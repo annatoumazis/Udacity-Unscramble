@@ -117,3 +117,12 @@ def monsters():
     enemies = ["dragon", "big boo", "small boo", "troll"]
     return random.choice(enemies)
 
+def adventure_game():
+    intro()
+    items = []
+    field()
+    fight()
+
+
+adventure_game()
+
